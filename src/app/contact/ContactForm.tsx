@@ -22,7 +22,8 @@ export default function ContactFormClient() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // Static form — no backend yet
+    // TODO: Integrate with backend (e.g. Supabase function, email service, or API route)
+    // Currently displays success state without sending data anywhere.
     setSubmitted(true);
   }
 

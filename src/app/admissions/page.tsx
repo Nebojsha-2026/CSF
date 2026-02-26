@@ -9,6 +9,16 @@ export const metadata: Metadata = {
     "How to apply to CSF Australia. Entry requirements, fees, scholarships, intake dates, and the application process for domestic and international students.",
 };
 
+const intakeStatusClasses: Record<string, string> = {
+  "Enrolling Now": "bg-green-100 text-green-800",
+  "Open": "bg-blue-100 text-blue-800",
+  "Coming Soon": "bg-gray-100 text-gray-600",
+};
+
+function getIntakeStatusClass(status: string): string {
+  return intakeStatusClasses[status] ?? "bg-gray-100 text-gray-600";
+}
+
 const steps = [
   { step: "01", title: "Choose Your Course", description: "Browse our courses and select the qualification that aligns with your career goals." },
   { step: "02", title: "Check Entry Requirements", description: "Review the entry requirements for your chosen course and ensure you meet the criteria." },
@@ -152,7 +162,7 @@ export default function AdmissionsPage() {
             {intakes.map((intake) => (
               <div key={intake.month} className="bg-white rounded-xl p-6 border border-gray-200 text-center">
                 <p className="text-2xl font-bold text-[#003366] mb-2">{intake.month}</p>
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${intake.status === "Enrolling Now" ? "bg-green-100 text-green-800" : intake.status === "Open" ? "bg-blue-100 text-blue-800" : "bg-gray-100 text-gray-600"}`}>
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${getIntakeStatusClass(intake.status)}`}>
                   {intake.status}
                 </span>
                 <p className="text-xs text-gray-500">{intake.spots}</p>

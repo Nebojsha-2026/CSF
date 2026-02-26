@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  experimental: {
-    // Optimize font loading for network-constrained environments
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
