@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* CSF Brand Colors */
+  --color-primary: #003366;
+  --color-primary-dark: #002244;
+  --color-primary-light: #004488;
+  --color-secondary: #FF6B00;
+  --color-secondary-dark: #e05e00;
+  --color-secondary-light: #ff8533;
+  --color-light-bg: #f8f9fa;
+  --color-text: #1a1a1a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
